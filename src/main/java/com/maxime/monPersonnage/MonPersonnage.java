@@ -16,6 +16,9 @@ public class MonPersonnage {
         if (fois == 0) {
             return null;
         }
+        if (fois < 0) {
+            throw new IllegalArgumentException("Le nombre de fois doit être positif");
+        }
         int index = (direction.ordinal() + fois) % Direction.values().length;
         direction = Direction.values()[index];
         return direction;

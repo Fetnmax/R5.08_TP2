@@ -66,7 +66,7 @@ public class MonPersonnageTest {
             monPersonnage.tourner(fois);
         } catch (IllegalArgumentException e) {
             // Then
-            assertThat(e.getMessage()).isEqualTo("Nombre négatif non supporté");
+            assertThat(e.getMessage()).isEqualTo("Le nombre de fois doit être positif");
         }
     }
 }
