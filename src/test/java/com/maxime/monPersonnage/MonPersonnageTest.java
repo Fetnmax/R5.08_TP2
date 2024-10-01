@@ -43,4 +43,16 @@ public class MonPersonnageTest {
         // Then
         assertThat(result).isNull();
     }
+
+    @Test
+    void tourner_devrait_retourner_OUEST_quand_3_est_passe_en_parametre() {
+        // Given
+        int fois = 3;
+
+        // When
+        Direction result = monPersonnage.tourner(fois);
+
+        // Then
+        assertThat(result).isEqualTo(Direction.OUEST);
+    }
 }
