@@ -32,4 +32,22 @@ public class FacteursPremiersTest {
             assertThat(e.getMessage()).isEqualTo("Zéro non supporté");
         }
     }
+
+    @Test
+    void generate_devrait_retourner_une_liste_contenant_2_quand_2_est_passe_en_parametre() {
+        List<Integer> result = FacteursPremiers.generate(2);
+        assertThat(result).containsExactly(2);
+    }
+
+    @Test
+    void generate_devrait_retourner_une_liste_contenant_2_et_3_quand_6_est_passe_en_parametre() {
+        List<Integer> result = FacteursPremiers.generate(6);
+        assertThat(result).containsExactly(2, 3);
+    }
+
+    @Test
+    void generate_devrait_retourner_une_liste_contenant_2_et_2_et_2_quand_8_est_passe_en_parametre() {
+        List<Integer> result = FacteursPremiers.generate(8);
+        assertThat(result).containsExactly(2, 2, 2);
+    }
 }

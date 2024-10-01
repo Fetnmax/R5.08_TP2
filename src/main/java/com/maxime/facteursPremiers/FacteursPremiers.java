@@ -1,5 +1,6 @@
 package com.maxime.facteursPremiers;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,12 +10,19 @@ public class FacteursPremiers {
         if (number == 1) {
             return Collections.emptyList();
         }
-        if (number < 0) {
+        else if (number < 0) {
             throw new IllegalArgumentException("Nombre négatif non supporté");
         }
-        if (number == 0) {
+        else if (number == 0) {
             throw new IllegalArgumentException("Zéro non supporté");
         }
-        return null;
+        List<Integer> factors = new ArrayList<>();
+        for (int i = 2; i <= number; i++) {
+            while (number % i == 0) {
+                factors.add(i);
+                number /= i;
+            }
+        }
+        return factors;
     }
 }
