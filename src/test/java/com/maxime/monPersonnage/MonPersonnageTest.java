@@ -55,4 +55,18 @@ public class MonPersonnageTest {
         // Then
         assertThat(result).isEqualTo(Direction.OUEST);
     }
+
+    @Test
+    void tourner_devrait_retourner_une_erreur_quand_un_nombre_negatif_est_passe_en_parametre() {
+        // Given
+        int fois = -1;
+
+        // When
+        try {
+            monPersonnage.tourner(fois);
+        } catch (IllegalArgumentException e) {
+            // Then
+            assertThat(e.getMessage()).isEqualTo("Nombre négatif non supporté");
+        }
+    }
 }
