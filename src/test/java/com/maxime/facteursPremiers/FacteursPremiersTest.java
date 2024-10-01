@@ -14,4 +14,13 @@ public class FacteursPremiersTest {
         List<Integer> result = FacteursPremiers.generate(1);
         assertThat(result).isEqualTo(Collections.emptyList());
     }
+
+    @Test
+    void generate_devrait_retourner_une_erreur_quand_un_nombre_negatif_est_passe_en_parametre() {
+        try {
+            FacteursPremiers.generate(-1);
+        } catch (IllegalArgumentException e) {
+            assertThat(e.getMessage()).isEqualTo("Nombre négatif non supporté");
+        }
+    }
 }

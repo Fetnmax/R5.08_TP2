@@ -9,6 +9,9 @@ public class FacteursPremiers {
         if (number == 1) {
             return Collections.emptyList();
         }
+        if (number < 0) {
+            throw new IllegalArgumentException("Nombre négatif non supporté");
+        }
         return null;
     }
 }
