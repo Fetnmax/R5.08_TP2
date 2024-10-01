@@ -16,9 +16,8 @@ public class MonPersonnage {
         if (fois == 0) {
             return null;
         }
-        if (fois == 1) {
-            return Direction.EST;
-        }
+        int index = (direction.ordinal() + fois) % Direction.values().length;
+        direction = Direction.values()[index];
         return direction;
     }
 
