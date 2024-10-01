@@ -12,6 +12,9 @@ public class FacteursPremiers {
         if (number < 0) {
             throw new IllegalArgumentException("Nombre négatif non supporté");
         }
+        if (number == 0) {
+            throw new IllegalArgumentException("Zéro non supporté");
+        }
         return null;
     }
 }

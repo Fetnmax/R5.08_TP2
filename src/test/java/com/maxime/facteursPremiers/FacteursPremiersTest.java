@@ -23,4 +23,13 @@ public class FacteursPremiersTest {
             assertThat(e.getMessage()).isEqualTo("Nombre négatif non supporté");
         }
     }
+
+    @Test
+    void generate_devrait_retourner_une_erreur_quand_zero_est_passe_en_parametre() {
+        try {
+            FacteursPremiers.generate(0);
+        } catch (IllegalArgumentException e) {
+            assertThat(e.getMessage()).isEqualTo("Zéro non supporté");
+        }
+    }
 }
