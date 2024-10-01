@@ -13,6 +13,9 @@ public class MonPersonnage {
     }
 
     public Direction tourner(int fois) {
+        if (fois == 1) {
+            return Direction.EST;
+        }
         return null;
     }
 
