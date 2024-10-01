@@ -31,4 +31,16 @@ public class MonPersonnageTest {
         // Then
         assertThat(result).isEqualTo(Direction.EST);
     }
+
+    @Test
+    void tourner_devrait_retourner_NULL_quand_0_est_passe_en_parametre() {
+        // Given
+        int fois = 0;
+
+        // When
+        Direction result = monPersonnage.tourner(fois);
+
+        // Then
+        assertThat(result).isNull();
+    }
 }

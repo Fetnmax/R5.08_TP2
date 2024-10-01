@@ -16,7 +16,7 @@ public class MonPersonnage {
         if (fois == 1) {
             return Direction.EST;
         }
-        return null;
+        return direction;
     }
 
 }
