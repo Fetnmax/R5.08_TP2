@@ -30,4 +30,18 @@ public class ArabicRomanNumeralsTest {
         assertThat(result).isEqualTo("XXXIV");
     }
 
+    @Test
+    void convert_devrait_renvoyer_une_erreur_quand_un_nombre_inferieur_a_1_est_passe_en_parametre() {
+        // Given
+        int nombre = -1;
+
+        // When
+        try {
+            ArabicRomanNumerals.convert(nombre);
+        } catch (IllegalArgumentException e) {
+            // Then
+            assertThat(e.getMessage()).isEqualTo("Nombre infèrieur à 1 non supporté");
+        }
+    }
+
 }
