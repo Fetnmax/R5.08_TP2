@@ -44,4 +44,18 @@ public class ArabicRomanNumeralsTest {
         }
     }
 
+    @Test
+    void convert_devrait_renvoyer_une_erreur_quand_un_nombre_superieur_a_50_est_passe_en_parametre() {
+        // Given
+        int nombre = 51;
+
+        // When
+        try {
+            ArabicRomanNumerals.convert(nombre);
+        } catch (IllegalArgumentException e) {
+            // Then
+            assertThat(e.getMessage()).isEqualTo("Nombre compris entre 1 et 50 uniquement");
+        }
+    }
+
 }
