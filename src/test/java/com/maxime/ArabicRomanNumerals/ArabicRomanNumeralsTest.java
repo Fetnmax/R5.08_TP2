@@ -40,7 +40,7 @@ public class ArabicRomanNumeralsTest {
             ArabicRomanNumerals.convert(nombre);
         } catch (IllegalArgumentException e) {
             // Then
-            assertThat(e.getMessage()).isEqualTo("Nombre infèrieur à 1 non supporté");
+            assertThat(e.getMessage()).isEqualTo("Nombre compris entre 1 et 50 uniquement");
         }
     }
 

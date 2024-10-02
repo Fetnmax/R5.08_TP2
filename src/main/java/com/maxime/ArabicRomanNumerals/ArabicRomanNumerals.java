@@ -3,6 +3,9 @@ package com.maxime.ArabicRomanNumerals;
 public class ArabicRomanNumerals {
 
     public static String convert(int nombre) {
+        if (nombre < 1) {
+            throw new IllegalArgumentException("Nombre compris entre 1 et 50 uniquement");
+        }
         String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
         String[] tens = {"", "X", "XX", "XXX", "XL", "L"};
 
